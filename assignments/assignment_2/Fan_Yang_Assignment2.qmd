@@ -67,7 +67,8 @@ census_api_key("86993dedbe98d77b9d79db6b8ba21a7fde55cb91", install = TRUE, overw
 ```{r}
 # Load spatial data
 library(here)
-
+options(tigris_use_cache = TRUE)
+options(tigris_progress = FALSE)
 pa_counties <- st_read(here("assignments", "assignment_2", "data", "Pennsylvania_County_Boundaries.shp"))
 hospitals   <- st_read(here("assignments", "assignment_2", "data", "hospitals.geojson"))
 pa_tracts <- tracts("PA", year = 2022, cb = TRUE)
